@@ -1,0 +1,1499 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GOOGLE❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202124;
+    background: white;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 18px 28px;
+    gap: 22px;
+    font-size: 14px;
+}
+
+.heart {
+    font-size: 22px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: -5px;
+    text-align: center;
+    margin-top: 90px;
+}
+
+.logo span:nth-child(4n+1) {
+    color: #4285f4;
+}
+
+.logo span:nth-child(4n+2) {
+    color: #ea4335;
+}
+
+.logo span:nth-child(4n+3) {
+    color: #fbbc05;
+}
+
+.logo span:nth-child(4n+4) {
+    color: #34a853;
+}
+
+.tag {
+    text-align: center;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.search-wrap {
+    width: min(650px, 90%);
+    margin: 25px auto 0;
+    position: relative;
+}
+
+.search {
+    width: 100%;
+    height: 52px;
+    border: 1px solid #dfe1e5;
+    border-radius: 28px;
+    padding: 0 110px 0 50px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 1px 5px rgba(32,33,36,0.12);
+}
+
+.search:focus {
+    box-shadow: 0 1px 8px rgba(32,33,36,0.22);
+}
+
+.mag {
+    position: absolute;
+    left: 18px;
+    top: 15px;
+    color: #777;
+    font-size: 20px;
+}
+
+.actions {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    display: flex;
+    gap: 12px;
+}
+
+.actions button {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* =========================
+   AUDIO PLAYER
+========================= */
+
+.audio-box {
+    width: min(650px, 90%);
+    margin: 18px auto;
+    text-align: center;
+}
+
+.audio-box p {
+    margin: 5px 0 10px;
+    color: #777;
+    font-size: 14px;
+}
+
+audio {
+    width: 100%;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    text-align: center;
+    margin: 24px;
+}
+
+.buttons button {
+    border: 1px solid #f1f3f4;
+    background: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px 17px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    border-color: #dadce0;
+}
+
+/* =========================
+   RESULTS
+========================= */
+
+.results {
+    display: none;
+    width: min(900px, 92%);
+    margin: 20px auto 60px;
+}
+
+/* =========================
+   TABS
+========================= */
+
+.tabs {
+    display: flex;
+    gap: 26px;
+    border-bottom: 1px solid #ddd;
+    padding: 0 5px;
+}
+
+.tab {
+    padding: 14px 8px;
+    cursor: pointer;
+    color: #5f6368;
+}
+
+.tab.active {
+    color: #1a73e8;
+    border-bottom: 3px solid #1a73e8;
+}
+
+/* =========================
+   RESULT INFORMATION
+========================= */
+
+.result-note {
+    color: #70757a;
+    font-size: 13px;
+    margin: 18px 5px;
+}
+
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 14px;
+    padding: 22px;
+    margin: 15px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.profile img {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.profile h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.profile h2 {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #555;
+    font-weight: normal;
+}
+
+.profile p {
+    line-height: 1.65;
+}
+
+.badge {
+    display: inline-block;
+    background: #fff0f5;
+    color: #d6336c;
+    border-radius: 18px;
+    padding: 7px 12px;
+    margin-top: 5px;
+}
+
+/* =========================
+   IMAGE GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.25s;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* =========================
+   VIDEO GRID
+========================= */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.video-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+}
+
+.video-card video {
+    width: 100%;
+    display: block;
+    background: black;
+}
+
+.video-card div {
+    padding: 12px;
+    font-weight: 600;
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.news-item {
+    padding: 17px;
+    border-bottom: 1px solid #eee;
+}
+
+.news-source {
+    font-size: 12px;
+    color: #777;
+}
+
+.news-item h3 {
+    margin: 6px 0;
+    font-size: 19px;
+}
+
+/* =========================
+   EDITING BOX
+========================= */
+
+.editbox {
+    background: #fff8fc;
+    border: 1px dashed #e8a8c3;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 18px;
+}
+
+.editbox strong {
+    color: #c2185b;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px) {
+
+    .logo {
+        font-size: 48px;
+        margin-top: 60px;
+    }
+
+    .profile {
+        flex-direction: column;
+    }
+
+    .profile img {
+        width: 100%;
+        height: 260px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img {
+        height: 150px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+====================================================== -->
+
+<div class="top">
+
+    <span>About</span>
+    <span>Our Story</span>
+    <span class="heart">❤️</span>
+
+</div>
+
+
+<!-- =====================================================
+     LOGO
+====================================================== -->
+
+<div class="logo">
+
+    <span>G</span>
+    <span>O</span>
+    <span>O</span>
+    <span>G</span>
+    <span>L</span>
+    <span>E</span>
+
+</div>
+
+
+<div class="tag">
+
+    Search the most important person in your world ❤️
+
+</div>
+
+
+<!-- =====================================================
+     SEARCH BAR
+====================================================== -->
+
+<div class="search-wrap">
+
+    <span class="mag">⌕</span>
+
+    <input
+        id="searchBox"
+        class="search"
+        placeholder="Who is the cutest man in the world?"
+        autocomplete="off"
+    >
+
+    <div class="actions">
+
+        <button
+            title="Voice search"
+            onclick="voiceSearch()">
+            🎙️
+        </button>
+
+        <button
+            title="Search"
+            onclick="doSearch()">
+            🔍
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     BACKGROUND MUSIC
+====================================================== -->
+
+<div class="audio-box">
+
+    <p>🎵 Our song — click play ❤️</p>
+
+    <audio controls >
+
+        <source src="file:///C:/Users/TSWRDC/Desktop/Edd_Sheeran_-_Perfect_(mp3.pm).mp3">
+
+
+    </audio>
+
+</div>
+
+
+<!-- =====================================================
+     SEARCH BUTTONS
+====================================================== -->
+
+<div class="buttons">
+
+    <button onclick="doSearch()">
+        Google Search
+    </button>
+
+    <button onclick="lucky()">
+        I'm Feeling Lucky ❤️
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     RESULTS
+====================================================== -->
+
+<section id="results" class="results">
+
+<!-- =====================================================
+     TABS
+====================================================== -->
+
+<div class="tabs">
+
+    <div
+        class="tab active"
+        data-tab="all"
+        onclick="showTab('all')">
+
+        All
+
+    </div>
+
+    <div
+        class="tab"
+        data-tab="images"
+        onclick="showTab('images')">
+
+        Images
+
+    </div>
+
+    <div
+        class="tab"
+        data-tab="videos"
+        onclick="showTab('videos')">
+
+        Videos
+
+    </div>
+
+    <div
+        class="tab"
+        data-tab="news"
+        onclick="showTab('news')">
+
+        News
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ALL TAB
+====================================================== -->
+
+<div id="allTab">
+
+    <div
+        class="result-note"
+        id="searchedText">
+    </div>
+
+
+    <!-- =================================================
+         BOYFRIEND PROFILE
+    ================================================== -->
+
+    <div class="card profile">
+ <img
+            id="boyPhoto"
+            src="file:///C:/Users/TSWRDC/Downloads/WhatsApp Image 2026-08-23 at 13.33.14 (2).jpeg"
+            alt="Boyfriend photo"
+        >
+
+
+        <div>
+
+            <h1 id="boyName">
+                Sai Pranav
+            </h1>
+
+            <span class="badge">
+                ❤️ World's Cutest Man
+            </span>
+
+            <h2>
+                Official GOOGLE result
+            </h2>
+
+            <p id="summary">
+
+                Pranav what should this google say about you? caring,
+                loving, handsome, incrediably cute with a cute smile,
+                and his eyes damnn one couldnt come out after looking
+                into it, and his boobs oh god very smooth like a sponge,
+                his cheecks love to bite them evry time like i couldnt
+                stop myself from kissing him every time, his lips and
+                i m dead soo soft, his hand ahhh and no words can compare
+                my man's handsomeness he is the one whom i love to talk
+                to the most, irritate the most, he is a bit childish,
+                bit romantic, flirting, understanding and a very happy
+                kid around me.
+
+                and i love you sooo much KANNA.
+
+            </p>
+
+            <p>
+
+                <strong>Known for:</strong>
+
+                Handsome smile • Cute arguments •
+                Making her smile • his cute teeth, smile,
+                make me irritated, love me endlessly ❤️
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ABOUT HIM
+    ================================================== -->
+
+    <div class="card">
+
+        <h2>
+            About him
+        </h2>
+
+        <p id="aboutText">
+
+            No matter how many people I search for,
+            somehow the answer will always be you. ❤️
+
+            <br><br>
+
+            You are my favourite person,
+            my favourite notification,
+            and my favourite part of my day.
+
+            <br><br>
+
+            He is my favourite person and my safest place. ❤️
+
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         EXTRA LOVE MESSAGE
+    ================================================== -->
+
+    <div class="card">
+
+        <h2>
+            💌 A little message for him
+        </h2>
+
+        <p>
+
+            We have been through a great journey, a journey of love,
+            war, misunderstandings, fights, romance, emotional phases
+            in both of our lives, and more to go.
+
+            <br><br>
+
+            Those sudden surprises, we shared every single thought of
+            ours, and yesterday you asked how many times I remembered
+            you in a day, and then I said “once” because you came and
+            never left, and you will never go from my stupid mind and
+            my heart. You have become my everything—my happiness,
+            sadness, excitement, cry, joy, laughter, motivation,
+            weakness, and everything.
+
+            <br><br>
+
+            And a few times, I do feel maybe he is the one, and I would
+            say this very proudly that you are my man, baby you are a
+            gem You truly are. But still, I do doubt somewhere at a tiny
+            little corner of my heart(shy), because what if? And I do
+            believe you won’t make it true about my silly doubts about you.
+
+            <br><br>
+
+            And the person you are—cute, no no very cute, sweet,
+            romantic, shy, and the happiest kid on this planet. A kid
+            who doesn’t know anything about how to make his girl happy,
+            but somehow you try to learn for his girl, and for me,
+            that’s the happiest part that I love from you.
+
+            <br><br>
+
+            And you know, I like the day where I was filled with anger
+            and was in an irritated mood, Usually, I’m 😉, and you were
+            asking me to make a video call, and I was denying the call.
+            Later, you started requesting more, and somehow I tried to call you.
+
+            <br><br>
+
+            I immediately saw your face, like i astound looking at your face
+
+            <br><br>
+
+            Usually! When I’m angry, then right after looking at your
+            face, I couldn’t put up my anger on my face anymore. But
+            that day, after looking at you, you were fully tensed.
+            You were walking here and there restlessly and standing
+            in front of the camera with a stressful face, fully tensed,
+            and I could sence your face in a disturbed mood.
+
+            <br><br>
+
+            Then I was like, “Oh damn, he is into me, and he loves me
+            so much. that day i was in a cloud nine.”
+
+            <br><br>
+
+            You know, that action made me fall for you even more.
+            Still, somehow I managed to stay angry at you, but that day,
+            your face, your tension, your anxiety, and your thoughts,
+            or the thinking process of how to make me cool, how to
+            convince me—I still remember that day, and I forever will
+            remember that cute little face.
+
+            <br><br>
+
+            One of the moments was when I confessed that my sister was
+            scolding me. Then immediately, you texted my sister on Insta
+            without even thinking about yourself twice or the consequences
+            that you might face.
+
+            <br><br>
+
+            Then I thought, “This guy, how easily he texted my sister
+            without even thinking about himself.”
+
+            <br><br>
+
+            And you’re not a boy all the time, Pranu. You acted like a
+            man sometimes, cared about me, understood me and I have
+            acted like a woman too😉.
+
+            <br><br>
+
+            And I liked you where you cut the call on the day before
+            your birthday without asking me, then on the very next day
+            after a fight about that topic you asked me “Shall I cut
+            the call?” You asked again so that I don't feel bad or
+            irritated again that you don't want to make me mad again.
+
+            <br><br>
+
+            And what else, pranu? I love everything about you—your
+            presence, your caring, your eternal love towards me.
+
+            <br><br>
+
+            The day you asked my friend about me, why I wasn’t yet
+            texting after 1 PM when I was suffering from fever, and yeah!
+            There were a few days where you weren’t there when I was in
+            pain.
+
+            <br><br>
+
+            The time I was suffering with fever, you weren’t there.
+            In addition, you made me angry, but somehow you convinced
+            me too.
+
+            <br><br>
+
+            We look cute together. I showed our picture to a couple of
+            people around me, and most of them convinced me that we
+            look cute together, and we always will look so cute and
+            innocent, one of the cutest couples ever.
+
+            <br><br>
+
+            And what else, my one and only boyfriend...
+
+            <br><br>
+
+            You are lucky, sorry so much lucky because you got me😉,
+            and I know I’m also fortunate because I got you, but you
+            are even more fortunate than me because you have got the
+            sexiest Girl Friend ever, baby.
+
+            <br><br>
+
+            I felt irritated with you so many times, but I still choose
+            you. Like, usually, I don’t stay with anyone who irritates
+            me more than thrice, but your irritation convinced me to
+            stay with you.
+
+            <br><br>
+
+            Your cute little words coming from your sexy little teeth
+            always convinced me to stay.
+
+            <br><br>
+
+            “Please, Lakshya, stay with me. I need you. I don’t need
+            anyone apart from you.”
+
+            <br><br>
+
+            It more feels like a small little kid, as shown above😘,
+            asking his mom to buy something materialistic thing from a shop
+            and being stubborn about the particular thing where he
+            needs only that thing and nothing else apart from it.
+
+            <br><br>
+
+            Love you so much, Pranavvv, and on the other hand, you
+            never did that much irritating to me as well, not a gafe
+            either. And I’m running out of words to express my love
+            towards you.
+
+            <br><br>
+
+            I saw you, talked to you, fallen for you, and falling for
+            you more day by day.
+
+            <br><br>
+
+            I only wish for one thing: may you have all the happiness
+            that the world has and give all the happiness the earth
+            has at every corner of it.
+
+            <br><br>
+
+            You remember this—you asked me one question yesterday
+            night, that “Lakshya, would you want to roam with me every
+            corner of the world?” And I was just changing the topic
+            by putting jokes.
+
+            <br><br>
+
+            And listen to the answer for that:
+
+            <br><br>
+
+            Listen carefully, re-read it for numberof times.
+
+            <br><br>
+
+            <strong>IF NOT YOU, THEN NO-ONE.</strong>
+
+            <br><br>
+
+            I invested my feelings on you, only on you. I would love
+            to travel with you every corner of this world, catching
+            your hand tight, and look at every place with you. And I
+            want to forget the time in your thoughts, in your presence.
+
+            <br><br>
+
+            If not you, then I would love to travel alone, but the
+            happiness, the comfortness, the excitement I get from you,
+            I think from no-one I might get.
+
+            <br><br>
+
+            Your irreplaceable Pranav.
+
+            <br><br>
+
+            And I’m possessive for you, like over-possessive, like
+            someone called you Kanna and I stopped calling you Kanna.
+            And you’re mine, always mine, and I’m yours. I will always
+            and forever be yours.
+
+            <br><br>
+
+            I never ever said anyone this thing apart from you.
+
+            <br><br>
+
+            I love you, Pranu. I love you so much. Love you eternally,
+            unconditionally, wholeheartedly, Pranu.
+
+            <br><br>
+
+            Like, I never expected anything from you, neither sex nor
+            money nor any materialistic needs, but your time, your
+            presence, your talks, your emotional support, and a happy
+            kid’s happy little words😘.
+
+            <br><br>
+
+            <strong>I LOVE YOU SOO MUCH, SAI PRANAV. ❤️</strong>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     IMAGES TAB
+====================================================== -->
+
+<div id="imagesTab" style="display:none">
+
+    <div class="result-note">
+        Images — Our little universe ❤️
+    </div>
+
+    <div class="gallery">
+
+        <img
+            src="file:///C:/Users/TSWRDC/Downloads/PXL_20260701_120436454.JPEG"
+            alt="Our photo 4"
+        >
+
+        <img
+            src="file:///C:/Users/TSWRDC/Desktop/PXL_20260912_105321868.JPEG"
+            alt="me pra" 
+        >
+
+
+        <img
+            src="file:///C:/Users/TSWRDC/Downloads/PXL_20261001_052421573.JPEG"
+            alt="Our photo 3"
+        >
+
+
+        <img
+            src="file:///C:/Users/TSWRDC/Desktop/PXL_20260713_090007858.MP 2.JPEG"
+            alt="Our photo 4"
+        >
+
+
+        <img
+            src="file:///C:/Users/TSWRDC/Desktop/PXL_20260912_105323254.JPEG"
+            alt="Our photo 5"
+        >
+
+
+        <img
+            src="file:///C:/Users/TSWRDC/Desktop/PXL_20260912_105325961.JPEG"
+            alt="Our photo 6"
+        >
+
+
+        <!-- ADD MORE PHOTOS LIKE THIS -->
+
+        <img
+            src="file:///C:/Users/TSWRDC/Desktop/PXL_20261001_050134009.JPEG"
+            alt="Our photo 7"
+        >
+
+
+        <img
+            src="file:///C:/Users/TSWRDC/Desktop/PXL_20261001_050142725.JPEG"
+            alt="Our photo 8"
+        >
+
+
+        <img
+            src="file:///C:/Users/TSWRDC/Desktop/PXL_20261001_045705822.MP.JPEG"width="900" height="100"
+            alt="Our photo 9"
+        >
+
+
+        <img
+            src="file:///C:/Users/TSWRDC/Desktop/IMG_20260811_133124_672.PNG"
+            alt="pho"
+        >
+
+     <img
+            src="file:///C:/Users/TSWRDC/Downloads/PXL_20260701_095308942.JPEG"
+            alt="Our photo 4"
+        >
+    <img
+            src="file:///C:/Users/TSWRDC/Desktop/PXL_20260701_120429718.JPEG"
+            alt="hi"
+        >
+    
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     VIDEOS TAB
+====================================================== -->
+
+<div
+    id="videosTab"
+    style="display:none"
+>
+
+
+    <div class="result-note">
+
+        Videos — Memories that move ❤️
+
+    </div>
+
+
+    <div class="video-grid">
+
+
+        <!-- =================================================
+             VIDEO 1
+        ================================================== -->
+
+        <div class="video-card">
+
+            <video
+                controls
+                poster="photo1.jpg">
+
+                <!-- EDIT VIDEO FILE HERE -->
+
+                <source
+                    src="file:///C:/Users/TSWRDC/Downloads/WhatsApp Video 2026-10-05 at 12.09.25 AM.mp4"
+                    type="video/mp4">
+
+            </video>
+
+
+            <!-- EDIT VIDEO TITLE -->
+
+            <div>
+
+                my most favourite memory ❤️
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             VIDEO 2
+        ================================================== -->
+
+        <div class="video-card">
+
+            <video
+                controls
+                poster="photo2.jpg">
+
+                <source
+                    src="file:///C:/Users/TSWRDC/Downloads/WhatsApp Video 2026-10-04 at 11.44.13 PM.mp4"
+                    type="video/mp4">
+
+            </video>
+
+
+            <div>
+
+                Two funny persons 🎥
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             VIDEO 3
+        ================================================== -->
+
+        <div class="video-card">
+
+            <video
+                controls
+                poster="photo3.jpg">
+
+                <source
+                    src="file:///C:/Users/TSWRDC/Downloads/WhatsApp Video 2026-10-05 at 12.00.16 AM.mp4"
+                    type="video/mp4">
+
+            </video>
+
+
+            <div>
+
+                Us in romantic side 💕
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             VIDEO 4
+        ================================================== -->
+
+        <div class="video-card">
+
+            <video
+                controls
+                poster="photo4.jpg">
+
+                <source
+                    src="file:///C:/Users/TSWRDC/Downloads/WhatsApp Video 2026-10-05 at 12.00.17 AM.mp4"
+                    type="video/mp4">
+
+            </video>
+
+
+            <div>
+
+                Me in a funny mood✨
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             VIDEO 5 — NEW
+        ================================================== -->
+
+        <div class="video-card">
+
+            <video
+                controls
+                poster="photo5.jpg">
+
+                <source
+                    src="file:///C:/Users/TSWRDC/Downloads/WhatsApp Video 2026-10-04 at 9.58.22 PM.mp4"
+                    type="video/mp4">
+
+            </video>
+
+
+            <div>
+
+                One of my favourite memory ❤️
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             VIDEO 6 — NEW
+        ================================================== -->
+
+        <div class="video-card">
+
+            <video
+                controls
+                poster="photo6.jpg">
+
+                <source
+                    src="file:///C:/Users/TSWRDC/Downloads/WhatsApp Video 2026-10-04 at 10.02.44 PM.mp4"
+                    type="video/mp4">
+
+            </video>
+
+
+            <div>
+
+                And teasing you is my favourite hobby 💕
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+    
+
+<!-- =====================================================
+     NEWS TAB
+====================================================== -->
+
+<div id="newsTab" style="display:none">
+
+    <div class="result-note">
+        News results about RAM
+    </div>
+
+    <div class="news">
+
+
+        <div class="news-item">
+
+            <div class="news-source">
+                LOVE NEWS • Today
+            </div>
+
+            <h3>
+                🚨 BREAKING:Chiliveru.Sai Pranav Officially Crowned the Cutest and Most Handsome Man in the World by One Special Girl! 👑❤️
+ 
+            </h3>
+
+            <p>
+                Sources close to the situation confirm that
+                his smile continues to cause serious levels
+                of cuteness.
+            </p>
+
+        </div>
+
+
+        <div class="news-item">
+
+            <div class="news-source">
+                THE DAILY LOVE • Today
+            </div>
+
+            <h3>
+                ❤️ Chiliveru named Cutest Boy Reported Missing —
+                Girlfriend Lakshya Launches her Search for him
+            </h3>
+
+            <p>
+                One very important boy has gone missing
+                from his girlfriend's side.
+              Girlfriend find soo tensed in his missing, where boyfriend found chilling with his new girlfriends
+             where her boyfriend is allegdly killed.
+
+                Search efforts are ongoing.
+            </p>
+
+        </div>
+
+
+        <div class="news-item">
+
+            <div class="news-source">
+                ROMANCE TIMES • Yesterday
+            </div>
+
+            <h3>
+                🌎 Local Boy Accidentally Becomes
+                Girlfriend's Favourite Person
+            </h3>
+
+            <p>
+                Experts say the cause may be his smile,
+                his personality,and his teeth where girl friend wants to bite them hard including his lips.
+            </p>
+
+        </div>
+
+
+        <div class="news-item">
+
+            <div class="news-source">
+                LOVE SEARCH EXCLUSIVE
+            </div>
+
+            <h3>
+                📢 Scientists Confirm:
+                Girlfriend Is Extremely Proud Of Him
+            </h3>
+
+            <p>
+                The investigation is complete.
+
+                <br><br>
+
+                The result is conclusive:
+
+                <br><br>
+
+                she loves him a lot. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* =========================================
+   SEARCH
+========================================= */
+
+function doSearch() {
+
+    const q =
+        document
+        .getElementById("searchBox")
+        .value
+        .trim();
+
+    if (!q) {
+
+        document
+        .getElementById("searchBox")
+        .focus();
+
+        return;
+    }
+
+    document
+    .getElementById("results")
+    .style.display = "block";
+
+    document
+    .getElementById("searchedText")
+    .textContent =
+        "About 1,000,000,000 results (0.01 seconds) — showing the most important one ❤️";
+
+    showTab("all");
+
+    window.scrollTo({
+
+        top:
+            document
+            .getElementById("results")
+            .offsetTop - 20,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* =========================================
+   I'M FEELING LUCKY
+========================================= */
+
+function lucky() {
+
+    document
+    .getElementById("searchBox")
+    .value =
+        "who is the cutest man in the world";
+
+    doSearch();
+
+}
+
+
+/* =========================================
+   SWITCH TABS
+========================================= */
+
+function showTab(tab) {
+
+    document
+    .getElementById("allTab")
+    .style.display =
+        tab === "all"
+        ? "block"
+        : "none";
+
+
+    document
+    .getElementById("imagesTab")
+    .style.display =
+        tab === "images"
+        ? "block"
+        : "none";
+
+
+    document
+    .getElementById("videosTab")
+    .style.display =
+        tab === "videos"
+        ? "block"
+        : "none";
+
+
+    document
+    .getElementById("newsTab")
+    .style.display =
+        tab === "news"
+        ? "block"
+        : "none";
+
+
+    document
+    .querySelectorAll(".tab")
+    .forEach(function(t) {
+
+        t.classList.toggle(
+            "active",
+            t.dataset.tab === tab
+        );
+
+    });
+
+}
+
+
+/* =========================================
+   ENTER KEY SEARCH
+========================================= */
+
+document
+.getElementById("searchBox")
+.addEventListener(
+    "keydown",
+    function(e) {
+
+        if (e.key === "Enter") {
+
+            doSearch();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   VOICE SEARCH
+========================================= */
+
+function voiceSearch() {
+
+    if (!("webkitSpeechRecognition" in window)) {
+
+        alert(
+            "Voice search is not supported in this browser."
+        );
+
+        return;
+    }
+
+    const recognition =
+        new webkitSpeechRecognition();
+
+    recognition.lang = "en-IN";
+
+    recognition.onresult =
+        function(e) {
+
+            document
+            .getElementById("searchBox")
+            .value =
+                e.results[0][0]
+                .transcript;
+
+            doSearch();
+
+        };
+
+    recognition.start();
+
+}
+
+
+/* =========================================
+   IMAGE CLICK
+   Opens image in new tab
+========================================= */
+
+document
+.querySelectorAll(".gallery img")
+.forEach(function(img) {
+
+    img.addEventListener("click", function() {
+
+        window.open(
+            this.src,
+            "_blank"
+        );
+
+    });
+
+});
+
+
+/* =========================================
+   AUDIO
+========================================= */
+
+const loveSong =
+    document.getElementById("loveSong");
+
+loveSong.addEventListener("error", function() {
+
+    console.log(
+        "Audio file not found. Make sure oursong.mp3 is in the same folder as index.html."
+    );
+
+});
+
+</script>
+
+</body>
+
+</html>
+```
